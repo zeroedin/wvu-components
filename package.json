@@ -39,7 +39,8 @@
     "lint": "run-s lint:*",
     "lint:eslint": "eslint .",
     "lint:styles": "stylelint 'src/**/*.css' 'docs/**/*.scss'",
-    "test": "wtr --group default"
+    "test": "wtr --group default",
+    "prepublishOnly": "npm run build"
   },
   "lint-staged": {
     "*.{js,ts}": "eslint --fix"
