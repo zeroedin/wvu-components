@@ -1,0 +1,76 @@
+{
+  "name": "wvu-confetti",
+  "version": "1.0.0",
+  "description": "West Virginia University Confetti",
+  "customElements": "custom-elements.json",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "web-components",
+    "html"
+  ],
+  "contributors": [
+    "Steven Spriggs <steven.spriggs@gmail.com>"
+  ],
+  "exports": {
+    ".": "./wvu.min.js",
+    "./*": "./src/*"
+  },
+  "files": [
+    "!*.ts",
+    "!*.{spec,e2e}.ts",
+    "src/*/*.{js,md,map,txt,d.ts}",
+    "src/*/*-lightdom.css",
+    "!src/*/docs/**/*.{js,html,css,md}",
+    "!src/*/demo/**/*.{js,html,css,md}",
+    "!src/*/test/*.{spec,e2e}.{ts,d.ts}",
+    "lib/**/*.{js,md,map,css,svg,md,html,txt,d.ts}",
+    "custom-elements.json",
+    "wvu.min*"
+  ],
+  "scripts": {
+    "build": "run-s build:*",
+    "build:analyze": "npm run analyze",
+    "build:compile": "ttsc",
+    "build:styles": "node scripts/transform-css.js",
+    "build:bundle": "node scripts/bundle.js",
+    "analyze": "cem analyze",
+    "dev:server": "web-dev-server --open --watch",
+    "lint": "run-s lint:*",
+    "lint:eslint": "eslint .",
+    "lint:styles": "stylelint 'src/**/*.css' 'docs/**/*.scss'",
+    "test": "wtr --group default"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --fix"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.6.4",
+    "@types/uglifycss": "^0.0.7",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "custom-elements-manifest": "^2.0.0",
+    "esbuild": "^0.15.7",
+    "esbuild-node-externals": "^1.5.0",
+    "esbuild-plugin-lit-css": "^2.0.0",
+    "esbuild-plugin-minify-html-literals": "^1.0.1",
+    "eslint": "^8.23.1",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-lit-a11y": "^2.2.2",
+    "eslint-plugin-no-only-tests": "^3.0.0",
+    "eslint-plugin-unicorn": "^43.0.2",
+    "npm-run-all": "^4.1.5",
+    "stylelint": "^14.11.0",
+    "stylelint-config-standard": "^28.0.0",
+    "ts-lit-plugin": "^1.2.1",
+    "ttypescript": "^1.5.13",
+    "typescript": "^4.8.3",
+    "typescript-lit-html-plugin": "^0.9.0",
+    "uglifycss": "^0.0.29",
+    "web-test-runner": "^0.0.36"
+  },
+  "dependencies": {
+    "confetti-js": "^0.0.18",
+    "lit": "^2.3.1"
+  }
+}

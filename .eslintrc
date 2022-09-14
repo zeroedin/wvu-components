@@ -1,0 +1,134 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "globals": {
+    "ga": false,
+    "optimizedResize": true,
+    "optimizedScroll": true
+  },
+  "extends": [
+    "google",
+    "eslint:recommended",
+    "plugin:lit-a11y/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "html",
+    "no-only-tests",
+    "lit-a11y"
+  ],
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "brace-style": ["error", "1tbs", { "allowSingleLine": false }],
+    "block-spacing": ["error", "always"],
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "ignore"
+    }],
+    "comma-spacing": "error",
+    "comma-style": ["error", "last"],
+    "curly": ["error", "all"],
+    "eqeqeq": ["error", "always", { "null": "ignore" }],
+
+    "indent": ["error", 2, {
+      "flatTernaryExpressions": true,
+      "SwitchCase": 1,
+      "ignoredNodes": [
+        "`ConditionalExpression`",
+        "`TaggedTemplateExpression[tag.name='html'] > TemplateLiteral CallExpression > ObjectExpression`",
+        "`TaggedTemplateExpression[tag.name='html'] > TemplateLiteral ObjectExpression`",
+        "`TaggedTemplateExpression[tag.name='html'] > TemplateLiteral CallExpression > TaggedTemplateLiteral`",
+        "`TaggedTemplateExpression[tag.name='html'] > TemplateLiteral ArrowFunctionExpression > BlockStatement`"
+      ]
+    }],
+    "linebreak-style": ["error", "unix"],
+    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+
+    "max-len": ["warn", 120, {
+      "ignoreComments": true,
+      "ignoreTemplateLiterals": true,
+      "ignorePattern": "^import (type )?\\{? ?\\w+ ?\\}? from \"(.*)\";$",
+      "ignoreUrls": true,
+    }],
+    "new-cap": "off",
+    "no-unused-vars": ["warn", { "ignoreRestSiblings": true }],
+    "no-var": "error",
+    "no-console": "error",
+    "no-extend-native": "error",
+    "no-only-tests/no-only-tests": "error",
+    "object-curly-spacing": ["error", "always"],
+    "operator-linebreak": ["error", "after", { "overrides": { "?": "after", ":": "before" } }],
+    "prefer-const": "error",
+    "prefer-destructuring": "error",
+    "prefer-object-spread": "error",
+    "prefer-promise-reject-errors": "off",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "require-jsdoc": "off",
+    "valid-jsdoc": "off",
+    "spaced-comment": ["error", "always", { "markers": ["/"] }],
+    "space-before-function-paren": ["error", { "anonymous": "never", "named": "never", "asyncArrow": "always" }],
+    "space-infix-ops": "error",
+    "space-unary-ops": "error",
+    "template-tag-spacing": "error",
+    "template-curly-spacing": "error",
+    "unicorn/no-for-loop": "error",
+    "unicorn/no-instanceof-array": "error",
+    "unicorn/prefer-add-event-listener": "error",
+    "unicorn/prefer-array-flat-map": "error",
+    "unicorn/prefer-array-flat": "error",
+    "unicorn/prefer-array-some": "error",
+    "unicorn/prefer-includes": "error",
+    "unicorn/prefer-keyboard-event-key": "error",
+    "unicorn/prefer-modern-dom-apis": "error",
+    "unicorn/prefer-object-from-entries": "error",
+  },
+  "overrides": [
+    {
+      "files": ["scripts/build.js"],
+      "env": { "node": true }
+    },
+    {
+      "files": ["**/*.ts"],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint", "unicorn"],
+      "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "rules": {
+        "no-invalid-this": "off",
+        "@typescript-eslint/no-invalid-this": ["error"],
+        "valid-jsdoc": "off",
+        "@typescript-eslint/no-explicit-any": [
+          "warn",
+          {
+            "ignoreRestArgs": true
+          }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "ignoreRestSiblings": true
+          }
+        ],
+        "@typescript-eslint/ban-ts-comment": [
+          "warn",
+          {
+            "ts-expect-error": "allow-with-description"
+          }
+        ]
+      }
+    }
+  ]
+}

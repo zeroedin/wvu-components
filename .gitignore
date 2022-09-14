@@ -1,0 +1,65 @@
+# Development files
+node_modules
+**/node_modules
+
+tmp
+.tmp
+
+####################################################
+##                                                ##
+##                    ARTIFACTS                   ##
+##                                                ##
+####################################################
+## ignore js, map, and css in element dirs
+## since we build our typescript sources in-place
+## except files which we want to commit,
+## like demo js and config files
+
+*.js.map
+**/*.LEGAL.txt
+*.tsbuildinfo
+test-results
+
+src/**/*.js
+src/**/*.js.map
+src/**/*.d.ts
+src/**/*.css.map
+src/*/test/**/*.png
+
+!scripts/**/*.js
+scripts/**/*.d.ts
+
+lib/**/*.js
+
+wvu.min.js
+
+*.tgz
+custom-elements.json
+
+####################################################
+##                                                ##
+##                      LOGS                      ##
+##                                                ##
+####################################################
+npm-debug.log*
+local.log
+
+# Local files
+.env
+*.local.umd.js
+*.local.js
+
+# Mac-specific
+.DS_Store
+
+# IDEs
+.vimrc
+.sonarlint
+.history
+
+# E2E
+/test/vrt-snapshots/
+/test/vrt-results/
+/test
+browserstack.err
+!docs/demo/web-dev-server.demo.config.js
