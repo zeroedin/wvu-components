@@ -1,7 +1,7 @@
 {
-  "name": "wvu-confetti",
+  "name": "wvu-components",
   "version": "1.0.0",
-  "description": "West Virginia University Confetti",
+  "description": "West Virginia University Web Components",
   "customElements": "custom-elements.json",
   "type": "module",
   "license": "MIT",
